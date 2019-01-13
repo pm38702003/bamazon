@@ -15,4 +15,4 @@ Selected item and quantity
 ![Quantity](https://github.com/pm38702003/bamazon/blob/master/proofOfLifeImages/Capture3PickedItemAndQuantity.PNG)
 
 Purchase Complete
-!Complete](https://github.com/pm38702003/bamazon/blob/master/proofOfLifeImages/Capture4PurchaseComplete.PNG)
+![Complete](https://github.com/pm38702003/bamazon/blob/master/proofOfLifeImages/Capture4PurchaseComplete.PNG)

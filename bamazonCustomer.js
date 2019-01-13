@@ -26,7 +26,7 @@ function connectToDataBase() {
 
 function showIntialProducts(callback) {
     console.log("showing all products...\n");
-    connection.query("select * from products",
+    connection.query("select item_id, product_name, department_name, format((price), 2) as price, stock_quantity from products;",
         function (err, res) {
             if (err) throw err;
             // Log all results of the SELECT statement
@@ -65,22 +65,28 @@ function placeCustomerOrder(itemid, units, newQuantity) {
             }
         ],
         function (err, res) {
-            connection.end();
+         //   connection.end();
         }
     );
     var unitPrice;
     productPrice.find(function (element) {
         if (element.split('|')[0] == itemid) {
             unitPrice = (element.split('|')[1]).trim()
+           // console.log("up-->"+ unitPrice)
         }
     });
-    console.log("*******purchase complete*************");
-    console.log("*************************************");
-    console.log("Price: " + unitPrice );
-    console.log("Quantity: " + (parseFloat(unitPrice)/parseFloat(units)));
-    console.log("Total Price: " + parseFloat(units) * parseFloat(unitPrice));
-    console.log("*************************************");
-    console.log("*******purchase complete*************");
+    // console.log ("units-->" + units + "up-->" + unitPrice); 
+    // console.log ("isFinite u-->" + isFinite(units)); 
+    // console.log ("isFinite up-->" + isFinite(unitPrice)); 
+    var up = Number(unitPrice.replace(/[^0-9.-]+/g,""));
+
+    console.log("*******purchase complete***********");
+    console.log("***********************************");
+    console.log("Price: $" + unitPrice );
+    console.log("Quantity: " + ((units*up)/up));
+    console.log("Total Price: $" + (units*up).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
+    console.log("***********************************");
+    console.log("*******purchase complete***********");
     //  console.log(query.sql);
     showIntialProducts(promptUserForProduct);
 }

@@ -14,5 +14,8 @@ User selects exit to exit application
 Selected item and quantity
 ![Quantity](https://github.com/pm38702003/bamazon/blob/master/proofOfLifeImages/Capture3PickedItemAndQuantity.PNG)
 
-Purchase Complete
+Purchase Complete, updated catalog is displayed, app resets for more purchases
 ![Complete](https://github.com/pm38702003/bamazon/blob/master/proofOfLifeImages/Capture4PurchaseComplete.PNG)
+
+You can also exit the app by selecting 0 for quantity
+![Complete](https://github.com/pm38702003/bamazon/blob/master/proofOfLifeImages/Capture5CloseAppWith0Quantity.PNG)
